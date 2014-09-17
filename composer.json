@@ -1,6 +1,8 @@
 {
     "name": "phpfont/binary",
     "description": "A library to read and write binary data.",
+    "keywords": ["binary", "stream", "endian"],
+    "homepage": "https://github.com/phpfont/binary",
     "license": "MIT",
     "authors": [
         {
