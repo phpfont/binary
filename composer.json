@@ -1,0 +1,19 @@
+{
+    "name": "phpfont/binary",
+    "description": "A library to read and write binary data.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Walter Tamboer",
+            "email": "walter@tamboer.nl"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpFont\\Binary\\": "src/"
+        }
+    }
+}
