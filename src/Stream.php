@@ -56,7 +56,7 @@ class Stream implements StreamInterface
         fseek($this->handle, $position, SEEK_SET);
     }
 
-    private function read($bytes)
+    protected function read($bytes)
     {
         if ($bytes < 1) {
             return '';
