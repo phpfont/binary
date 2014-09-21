@@ -371,7 +371,9 @@ class Stream implements StreamInterface
 
     public function writeInt32($value)
     {
-        // There is no need in checking for overflow, PHP doesn't handle integers bigger than int32.
+        while ($value >= 0x80000000) {
+            $value -= 0x100000000;
+        }
 
         $bytes = pack('l', $value);
 
@@ -380,7 +382,9 @@ class Stream implements StreamInterface
 
     public function writeInt32BE($value)
     {
-        // There is no need in checking for overflow, PHP doesn't handle integers bigger than int32.
+        while ($value >= 0x80000000) {
+            $value -= 0x100000000;
+        }
 
         $bytes = pack('N', $value);
 
@@ -389,7 +393,9 @@ class Stream implements StreamInterface
 
     public function writeInt32LE($value)
     {
-        // There is no need in checking for overflow, PHP doesn't handle integers bigger than int32.
+        while ($value >= 0x80000000) {
+            $value -= 0x100000000;
+        }
 
         $bytes = pack('V', $value);
 
