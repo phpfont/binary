@@ -156,7 +156,13 @@ class Stream implements StreamInterface
 
         $unpacked = unpack('L', $bytes);
 
-        return current($unpacked);
+        $value = current($unpacked);
+
+        while ($value >= 0x80000000) {
+            $value -= 0x100000000;
+        }
+
+        return $value;
     }
 
     public function readInt32BE()
@@ -165,7 +171,13 @@ class Stream implements StreamInterface
 
         $unpacked = unpack('N', $bytes);
 
-        return current($unpacked);
+        $value = current($unpacked);
+
+        while ($value >= 0x80000000) {
+            $value -= 0x100000000;
+        }
+
+        return $value;
     }
 
     public function readInt32LE()
@@ -174,7 +186,13 @@ class Stream implements StreamInterface
 
         $unpacked = unpack('V', $bytes);
 
-        return current($unpacked);
+        $value = current($unpacked);
+
+        while ($value >= 0x80000000) {
+            $value -= 0x100000000;
+        }
+
+        return $value;
     }
 
     public function readInt8()
