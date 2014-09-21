@@ -49,7 +49,9 @@ class StreamTest extends \PHPUnit_Framework_TestCase
 
         $stream = new Stream($this->resource);
 
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        $value = 0x00FF;
+        $packed = pack('S', $value);
+        if ($value === current(unpack('v', $packed))) {
             $this->assertEquals(Stream::BYTE_ORDER_LITTLE_ENDIAN, $stream->getEndianness());
         } else {
             $this->assertEquals(Stream::BYTE_ORDER_BIG_ENDIAN, $stream->getEndianness());
