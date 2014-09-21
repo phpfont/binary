@@ -57,7 +57,7 @@ class Int32Test extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2147483647, $stream->readInt32BE());
     }
 
-    public function testInt32LEndianOutsideBuffer()
+    public function testInt32BigEndianOutsideBuffer()
     {
         $this->resource = fopen(tempnam(sys_get_temp_dir(), 'binary'), 'a+');
 
