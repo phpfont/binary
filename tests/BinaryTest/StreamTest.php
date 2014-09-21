@@ -49,6 +49,7 @@ class StreamTest extends \PHPUnit_Framework_TestCase
 
         $stream = new Stream($this->resource);
 
+        fwrite(STDERR, 'Current OS: ' . PHP_OS . PHP_EOL);
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             $this->assertEquals(Stream::BYTE_ORDER_LITTLE_ENDIAN, $stream->getEndianness());
         } else {
